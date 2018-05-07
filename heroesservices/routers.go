@@ -56,7 +56,7 @@ var routes = Routes{
 	Route{
 		"GetHero",
 		strings.ToUpper("Get"),
-		"/api/Heroes/Get",
+		"/api/Heroes/Get/{firstName}/{lastName}",
 		GetHero,
 	},
 }
