@@ -17,7 +17,11 @@ type Person struct {
 	//
 	// required: true
 	LastName string `json:"lastName"`
-	HeroName string
+
+	// The Person's given Hero name
+	//
+	// required: false
+	HeroName string `json:"heroName"`
 }
 
 func (person *Person) SetHeroName() {
