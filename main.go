@@ -7,6 +7,7 @@ import (
 	sw "./heroesservices"
 )
 
+//go:generate swagger generate spec
 func main() {
 	log.Printf("Heroes service is starting on port 8080...")
 

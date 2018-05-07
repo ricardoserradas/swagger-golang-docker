@@ -4,10 +4,20 @@ import (
 	"strings"
 )
 
+// Person represents the person that will be given a Hero name
+//
+// swagger:model Person
 type Person struct {
-	FirstName string
-	LastName  string
-	HeroName  string
+	// The Person's first name
+	//
+	// required: true
+	FirstName string `json:"firstName"`
+
+	// The Person's last name
+	//
+	// required: true
+	LastName string `json:"lastName"`
+	HeroName string
 }
 
 func (person *Person) SetHeroName() {

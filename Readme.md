@@ -1,4 +1,4 @@
-# Swagger Training with Golang Core and Docker
+# Swagger Training with Golang and Docker
 
 In addition, I'd like to containerize it to mix experiments. Here it is.
 
