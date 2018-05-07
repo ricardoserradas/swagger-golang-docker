@@ -32,6 +32,7 @@ func GetHero(w http.ResponseWriter, r *http.Request) {
 	// responses:
 	//   '200':
 	//     description: Hero response
+
 	params := mux.Vars(r)
 
 	firstName := params["firstName"]

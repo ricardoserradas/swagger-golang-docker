@@ -1,6 +1,7 @@
 {
   "consumes": [
-    "application/json"
+    "application/json",
+    "text/plain"
   ],
   "produces": [
     "application/json"

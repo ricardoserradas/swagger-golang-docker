@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	sw "./heroesservices"
+	"github.com/rs/cors"
 )
 
 //go:generate swagger generate spec
@@ -15,5 +16,7 @@ func main() {
 
 	log.Printf("Heroes service up and running on http://localhost:8080")
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	handler := cors.Default().Handler(router)
+
+	log.Fatal(http.ListenAndServe(":8080", handler))
 }
