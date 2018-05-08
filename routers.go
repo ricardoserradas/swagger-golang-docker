@@ -1,4 +1,4 @@
-package heroesservices
+package main
 
 import (
 	"fmt"
@@ -50,7 +50,7 @@ var routes = Routes{
 	Route{
 		"Index",
 		strings.ToUpper("Get"),
-		"api/Heroes/Index",
+		"/api/Heroes/Index",
 		Index,
 	},
 	Route{
@@ -58,5 +58,11 @@ var routes = Routes{
 		strings.ToUpper("Get"),
 		"/api/Heroes/Get/{firstName}/{lastName}",
 		GetHero,
+	},
+	Route{
+		"GetHealth",
+		strings.ToUpper("Get"),
+		"/api/Health",
+		Health,
 	},
 }

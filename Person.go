@@ -1,4 +1,4 @@
-package heroesservices
+package main
 
 import (
 	"strings"
