@@ -2,6 +2,7 @@
 
 In addition, I'd like to containerize it to mix experiments. I'll update this repo with these next steps:
 
+* Exposing Swagger on another container
 * Publish it on an Azure Container Registry
 * Use it on an Azure Container Service, using Kubernetes
 
