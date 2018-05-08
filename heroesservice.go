@@ -1,7 +1,8 @@
-package heroesservices
+package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -45,4 +46,19 @@ func GetHero(w http.ResponseWriter, r *http.Request) {
 	// serializedReturn, _ := json.Marshal(person)
 
 	json.NewEncoder(w).Encode(person)
+}
+
+func Health(w http.ResponseWriter, r *http.Request) {
+	// swagger:operation GET /api/Heroes/Health getHealth
+	//
+	// Function used to check the health of the service
+	//
+	// ---
+	// produces:
+	// - text/plain
+	// responses:
+	//   '200':
+	//     description: Health status
+
+	fmt.Fprintf(w, "Service is healthy.")
 }
