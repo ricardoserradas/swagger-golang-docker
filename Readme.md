@@ -18,20 +18,20 @@ https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images
 # Quick snippets
 
 ## Error while running *go get*
-To address this problem, check your GOBIN variable by running `go env`
+To address this problem, check your GOBIN variable by running `go env`.
 
-If this is empty, then set this variable to your Go Bin directory, which uses to be `C:\Go\bin` using:
+If it is empty, then set this variable to your Go Bin directory, which uses to be `C:\Go\bin` using:
 
 `> set GOBIN=C:\Go\bin`
 
 ## Generate spec from commented code
-Take care! You'll see nothing in your `swagger.json` if you do not comment out your code using one of the *Spec from source* snippets. 
+Take care! You'll see nothing in your `swagger.json` unless you comment out your code using one of the [*Spec from source*](https://goswagger.io/generate/spec.html) snippets.
 
 After commenting it all, use the following command to generate a full `swagger.json` file:
 
 `..\..\bin\swagger.exe generate spec -o .\swagger.json`
 
-Note that I pointed the swagger.exe to a different directory, as my bin was outsite the working dir I was storing this source code. Take care to find the path of your swagger.exe.
+Note that I pointed the swagger.exe to a different directory, as my `bin` directory was outsite the working dir I was storing this source code. Take care to find the right path of your swagger.exe.
 
 ## Run Swagger UI
 
@@ -41,17 +41,17 @@ You can choose between Swagger UI or ReDoc to view an user-friendly documentatio
 
 Where:
 
-* `-F swagger` means I want to use the Swagger 'flavor' instead of ReDoc
+* `-F swagger` means I want to use the Swagger 'flavor' instead of ReDoc;
 * `-p 8081` is the port I want Swagger to expose my OpenAPI doc (swagger.json)
 
 # Enable CORS on your Web API
-Swagger exposes the documentation of your API through http://petstore.swagger.io and Cross Origin Resource Sharing (CORS). Given that, your Web API needs to enable it by adding `Access-Control-Allow-Origin` to the response header.
+Swagger exposes the documentation of your API through http://petstore.swagger.io and uses Cross Origin Resource Sharing (CORS) to make it possible. Given that, your Web API needs to enable it by adding `Access-Control-Allow-Origin` to the response header.
 
 You can do this using one of these two options:
 
 ## On each method/operation
 
-Add the header to the Response Writer of the API Operation:
+Add the response header using the Response Writer of the API Operation:
 
 `w.Header().Set("Access-Control-Allow-Origin", "*")`
 
