@@ -65,4 +65,10 @@ var routes = Routes{
 		"/api/Health",
 		Health,
 	},
+	Route{
+		"GetSwaggerDoc",
+		strings.ToUpper("Get"),
+		"/doc/{fileName}",
+		SwaggerDoc,
+	},
 }
