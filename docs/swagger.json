@@ -1,0 +1,99 @@
+{
+  "consumes": [
+    "application/json",
+    "text/plain"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "the purpose of this app is to provide a service to generate a Hero name for a given Person",
+    "title": "Heroes API.",
+    "termsOfService": "there are no TOS at this moment, use at your own risk we take no responsibility",
+    "contact": {
+      "name": "Ricardo Serradas",
+      "url": "https://blogs.msdn.microsoft.com/ricardoserradas",
+      "email": "ricardo.serradas@outlook.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    },
+    "version": "0.0.1"
+  },
+  "host": "localhost:8080",
+  "paths": {
+    "/api/Heroes/Get/{firstName}/{lastName}": {
+      "get": {
+        "description": "Could be any Hero",
+        "produces": [
+          "application/json"
+        ],
+        "summary": "Returns the Person with a Hero name assigned",
+        "operationId": "getHero",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "the first name of the Person",
+            "name": "firstName",
+            "in": "path",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "the last name of the Person",
+            "name": "lastName",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Hero response"
+          }
+        }
+      }
+    },
+    "/api/Heroes/Health": {
+      "get": {
+        "description": "Function used to check the health of the service",
+        "produces": [
+          "text/plain"
+        ],
+        "operationId": "getHealth",
+        "responses": {
+          "200": {
+            "description": "Health status"
+          }
+        }
+      }
+    },
+    "/doc/{fileName}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "summary": "Use swagger.json as a file name to return the OpenAPI swagger documentation in JSON.",
+        "operationId": "swaggerDoc",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "use swagger.json",
+            "name": "fileName",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Swagger documentation"
+          }
+        }
+      }
+    }
+  }
+}

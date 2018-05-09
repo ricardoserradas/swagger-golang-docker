@@ -69,3 +69,11 @@ I still didn't find the root cause of it but, if you try out your API using Swag
 `Invariant Violation: Minified React error #31; visit http://facebook.github.io/react/docs/error-decoder.html?invariant=31&args[]=%5Bobject%20Blob%5D&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.`
 
 If you try it using Google Chrome, you're going to succeed.
+
+# Dockerizing it
+
+This sample does not run Swagger UI into the container. Instead, it uses the UI in http://petstore.swagger.io/ (and that's why you need to enable CORS). This is how Go-Swagger works, actually.
+
+To make it possible, I added a few more lines to the Dockerfile to update the swagger.json file after compilation and then I copied it to the scratch image.
+
+At last, I added a new function `SwaggerDoc` - associated to `/doc/{fileName}` route to read this file and retrieve its content so the petstore Swagger UI is able to render it.
